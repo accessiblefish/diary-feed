@@ -1,0 +1,280 @@
+.diary-feed-view {
+  padding: 0;
+}
+
+.diary-feed-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.diary-feed-entry-header,
+.diary-feed-entry-actions,
+.diary-feed-conflict-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.diary-feed-button {
+  width: auto;
+  min-height: 32px;
+  padding: 4px;
+  border: none;
+  box-shadow: none;
+  white-space: nowrap;
+}
+
+.diary-feed-open-file {
+  color: var(--text-muted);
+}
+
+.diary-feed-open-file svg {
+  width: 18px;
+  height: 18px;
+}
+
+.diary-feed-scroller {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.diary-feed-spacer {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+}
+
+.diary-feed-row {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 0 48px;
+  box-sizing: border-box;
+}
+
+.diary-feed-row::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 24px;
+  left: 0;
+  height: 1px;
+  background: var(--background-modifier-border-focus);
+}
+
+.diary-feed-entry {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 16px 24px;
+  background: transparent;
+}
+
+.diary-feed-entry-header {
+  justify-content: space-between;
+  padding: 12px 0 4px;
+}
+
+.diary-feed-entry-date {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+}
+
+.diary-feed-entry-status {
+  min-height: 18px;
+  color: var(--text-faint);
+  font-size: var(--font-ui-smaller);
+}
+
+.diary-feed-entry-status.is-error {
+  color: var(--text-error);
+}
+
+.diary-feed-entry-body {
+  min-height: 80px;
+}
+
+.diary-feed-rendered {
+  min-height: 68px;
+  cursor: text;
+}
+
+.diary-feed-rendered > :first-child {
+  margin-top: 0;
+}
+
+.diary-feed-empty,
+.diary-feed-empty-entry {
+  color: var(--text-faint);
+  text-align: center;
+}
+
+.diary-feed-empty {
+  padding: 32px 16px 0;
+}
+
+.diary-feed-empty-entry {
+  padding: 24px 0;
+}
+
+.diary-feed-entry-body .cm-editor {
+  min-height: 140px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-normal);
+}
+
+.diary-feed-entry-body .cm-editor.cm-focused {
+  outline: none;
+  box-shadow: none;
+}
+
+.diary-feed-entry-body .cm-content {
+  padding: 12px 0;
+  font-family: var(--font-text);
+  caret-color: var(--text-normal);
+}
+
+.diary-feed-entry-body .cm-line {
+  padding: 0;
+}
+
+.diary-feed-entry-body .cm-cursor {
+  border-left-color: var(--text-normal);
+}
+
+.diary-feed-live-preview,
+.diary-feed-live-preview .markdown-source-view {
+  width: 100%;
+  height: auto;
+}
+
+.diary-feed-live-preview .cm-scroller {
+  overflow: visible;
+}
+
+.diary-feed-conflict:not(:empty) {
+  margin: 0 0 12px;
+  padding: 12px;
+  background: var(--background-secondary);
+}
+
+.diary-feed-conflict-title {
+  margin-bottom: 8px;
+  color: var(--text-error);
+}
+
+.diary-feed-conflict-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.diary-feed-conflict-text {
+  width: 100%;
+  min-height: 140px;
+  margin: 6px 0;
+  border: none;
+  resize: vertical;
+  font-family: var(--font-monospace);
+}
+
+.diary-feed-conflict-actions {
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+@media (max-width: 700px) {
+  .diary-feed-entry-header {
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+  .diary-feed-conflict-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .diary-feed-row {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+}
+
+.cm-live-strong {
+  font-weight: 650;
+}
+
+.cm-live-emphasis {
+  font-style: italic;
+}
+
+.cm-live-strike {
+  text-decoration: line-through;
+}
+
+.cm-live-code {
+  padding: 0 4px;
+  border-radius: 4px;
+  background: var(--code-background);
+  font-family: var(--font-monospace);
+}
+
+.cm-live-link {
+  color: var(--link-color);
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: var(--link-color-hover);
+  text-underline-offset: 2px;
+}
+
+.cm-live-heading-1,
+.cm-live-heading-2,
+.cm-live-heading-3,
+.cm-live-heading-4,
+.cm-live-heading-5,
+.cm-live-heading-6 {
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.cm-live-heading-1 { font-size: 1.7em; }
+.cm-live-heading-2 { font-size: 1.45em; }
+.cm-live-heading-3 { font-size: 1.25em; }
+.cm-live-heading-4 { font-size: 1.12em; }
+
+.cm-live-quote {
+  padding-left: 10px;
+  border-left: 2px solid var(--blockquote-border-color);
+  color: var(--blockquote-color);
+}
+
+.cm-live-embed {
+  max-width: 100%;
+}
+
+.cm-live-embed .markdown-rendered {
+  padding: 0;
+}
+
+.diary-feed-entry-body .hr {
+  display: flex;
+  align-items: center;
+}
+
+.diary-feed-entry-body .hr > hr {
+  flex: 1 0 0;
+  margin: 0;
+}
+
+.cm-live-checkbox {
+  margin: 0 6px 0 0;
+  vertical-align: middle;
+}
