@@ -104,6 +104,14 @@
 .diary-feed-rendered {
   min-height: 68px;
   cursor: text;
+
+  /* 阅读模式标题同样压到日期（20px）之下 */
+  --h1-size: 1.2em;
+  --h2-size: 1.12em;
+  --h3-size: 1.06em;
+  --h4-size: 1em;
+  --h5-size: 0.95em;
+  --h6-size: 0.9em;
 }
 
 .diary-feed-rendered > :first-child {
@@ -245,10 +253,13 @@
   line-height: 1.35;
 }
 
-.cm-live-heading-1 { font-size: 1.7em; }
-.cm-live-heading-2 { font-size: 1.45em; }
-.cm-live-heading-3 { font-size: 1.25em; }
-.cm-live-heading-4 { font-size: 1.12em; }
+/* 标题整体压到日期（20px）之下，保证层级区分 */
+.cm-live-heading-1 { font-size: 1.2em; }
+.cm-live-heading-2 { font-size: 1.12em; }
+.cm-live-heading-3 { font-size: 1.06em; }
+.cm-live-heading-4 { font-size: 1em; }
+.cm-live-heading-5 { font-size: 0.95em; }
+.cm-live-heading-6 { font-size: 0.9em; }
 
 .cm-live-quote {
   padding-left: 10px;
