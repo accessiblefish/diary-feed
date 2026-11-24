@@ -1,6 +1,6 @@
 {
   "name": "@accessiblefish/diary-feed",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A lightweight chronological feed for dated Markdown diaries",
   "main": "main.js",
   "scripts": {

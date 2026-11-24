@@ -1,7 +1,7 @@
 {
   "id": "diary-feed",
   "name": "Diary Feed",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "minAppVersion": "1.13.0",
   "description": "Read and edit dated Markdown diaries in a continuous feed.",
   "author": "accessiblefish",
